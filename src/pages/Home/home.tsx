@@ -1,12 +1,11 @@
 // import HeroSection from "./components/Herosection"
-import Button from "../../components/button"
+import Card from "../../components/card"
 
 export default function Home() {
     return (
         <main>
             {/* <HeroSection /> */}
-            <h1>This is home page</h1>
-            <Button/>
+            <Card/>
         </main>
     )
 }
