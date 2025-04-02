@@ -1,13 +1,14 @@
 import './App.css'
-import Home from "./pages/Home/home"
+import Layout from './components/layout'  
 
 function App() {
   return (
     <>
     
       <main>
-        <Home/>
+        <Layout/>
       </main>
+      
     </>
   )
 }
