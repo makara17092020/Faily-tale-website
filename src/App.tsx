@@ -1,10 +1,11 @@
 import "./App.css";
-import Button from "./components/button";
+import Home from "./pages/Home/home";
+
 function App() {
   return (
     <>
       <main>
-        <Button />
+        <Home />
       </main>
     </>
   );
