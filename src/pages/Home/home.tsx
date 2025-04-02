@@ -1,17 +1,6 @@
 // import HeroSection from "./components/Herosection"
-import Button from "../../components/button";
+import Card from "../../components/card"
 
-<<<<<<< .merge_file_aUDi7H
-export default function Home() {
-  return (
-    <main>
-      {/* <HeroSection /> */}
-      <h1>This is home page</h1>
-      <Button />
-    </main>
-  );
-}
-=======
 const Home = () => {
     return (
         <main>
@@ -36,4 +25,3 @@ const Home = () => {
 }
 
 export default Home
->>>>>>> .merge_file_lxA1OK
