@@ -1,12 +1,17 @@
+<<<<<<< HEAD
+import './App.css'
+// import Layout from './components/layout'  
+import Home from './pages/Home/home'
+=======
 import "./App.css";
-import Navbar from "./components/header";
-import Button from "./pages/Home/home";
+import Home from "./pages/Home/home";
+
 function App() {
   return (
     <>
       <Navbar />
       <main>
-        <Button />
+        <Home />
       </main>
     </>
   );
