@@ -4,20 +4,14 @@ import './App.css'
 import Home from './pages/Home/home'
 =======
 import "./App.css";
-import Footer from "./components/footer";
-// import Home from "./pages/Home/home";
->>>>>>> lyza
+import Home from "./pages/Home/home";
 
 function App() {
   return (
     <>
+      <Navbar />
       <main>
-<<<<<<< HEAD
         <Home />
-=======
-        {/* <Home /> */}
-        <Footer />
->>>>>>> lyza
       </main>
     </>
   );

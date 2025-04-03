@@ -1,6 +1,7 @@
 // import HeroSection from "./components/Herosection"
 import Card from "../../components/card"
 
+<<<<<<< HEAD
 const Home = () => {
     return (
         <main>
@@ -22,6 +23,16 @@ const Home = () => {
             
         </main>
     )
+=======
+export default function Home() {
+  return (
+    <main>
+      {/* <HeroSection /> */}
+      <h1></h1>
+      <Button />
+    </main>
+  );
+>>>>>>> button
 }
 
 export default Home
