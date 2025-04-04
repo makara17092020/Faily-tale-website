@@ -1,11 +1,12 @@
 import logo from "../assets/image.png";
 import mornster from "../assets/mornster.png";
+import hero from "../assets/herosectionhomepage.png"
 import { useState } from "react";
 
 const Layout = () => {
   const [open, setOpen] = useState(false);
     return (
-      <div className="bg-amber-400  grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-4">
         <nav className="fixed w-full px-10 pt-2 flex justify-between md:justify-between items-center bg-white shadow pb-1  text-black">
       <div className="hidden font-bold md:flex space-x-6">
         <a className="hover:text-bluegreen hover:underline" href="/">
@@ -90,8 +91,11 @@ const Layout = () => {
         </div>
       )}
     </nav>
-        <div className="mt-25 mx-auto w-[95%] h-[300px] bg-green-200  flex items-center justify-center">
-            Contant
+
+        <div className="mt-18 w-full h-auto bg-green-200  flex items-center justify-center">
+            <div className="w-full h-[500px]">
+              <img className="h-full w-full" src={hero} alt="" />
+            </div>
         </div>
 
         <footer className="bg-[#50C878] text-white text-center py-5 flex flex-col md:flex-row justify-between flex-wrap gap-10 md:gap-0 px-5">
