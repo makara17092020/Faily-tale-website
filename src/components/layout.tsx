@@ -95,6 +95,7 @@ const Layout = () => {
         <div className="mt-18 w-full h-auto bg-green-200  flex items-center justify-center">
             <div className="w-full h-[500px]">
               <img className="h-full w-full" src={hero} alt="" />
+              
             </div>
         </div>
 
