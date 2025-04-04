@@ -1,13 +1,19 @@
-import './App.css'
-// import Layout from './components/layout'  
-import Home from './pages/Home/home'
+
+import "./App.css";
+import Header from "./components/header";
+import Footer from "./components/footer";
+import Register from "./pages/Register/register";
+// import Home from "./pages/Home/home";
 
 function App() {
   return (
     <>
       <main>
-        <Home />
+        <Header/>
+        <Register/>
+        <Footer/>
       </main>
+       
     </>
   );
 }
