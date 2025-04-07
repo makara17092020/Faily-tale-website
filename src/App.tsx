@@ -1,6 +1,7 @@
 
-import Home from './pages/Home/home'
+import Home from './pages/home'
 import "./App.css";
+import Story from './pages/story';
 
 
 
@@ -9,6 +10,8 @@ function App() {
   return (
     <>
     <Home/>
+
+    <Story/>
     </>
   );
 }

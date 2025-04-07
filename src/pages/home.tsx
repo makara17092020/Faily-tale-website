@@ -1,9 +1,9 @@
 
-import Card from "../../components/card"
-import Navbar from "../../components/header"
+import Card from "../components/card"
+import Navbar from "../components/header"
 import hero from "../../assets/herosectionhomepage.png"
-import Button from "../../components/button"
-import Footer from "../../components/footer"
+import Button from "../components/button"
+import Footer from "../components/footer"
 
 const Home = () => {
     return (
@@ -85,4 +85,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;

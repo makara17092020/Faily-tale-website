@@ -1,8 +1,8 @@
-import Footer from "../../components/footer"
-import Navbar from "../../components/header"
+import Footer from "../components/footer"
+import Navbar from "../components/header"
 import Herostory from "../../assets/Herostory.png"
-import Button from "../../components/button"
-import Card from "../../components/card"
+import Button from "../components/button"
+import Card from "../components/card"
 
 const Story = () => {
     return (
