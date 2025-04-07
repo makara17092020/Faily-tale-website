@@ -9,7 +9,7 @@ const Card = () => {
                 <div className='relative w-full h-[75%]'>
                     <img className='w-full h-full rounded-tl-2xl rounded-tr-2xl' src={bookCover1} alt="" />
                     <div className="absolute top-4 right-3 w-8 h-7.5 flex items-center justify-center rounded-full bg-transparent hover:bg-[#F40808] transition-colors duration-200">
-                        <img className="w-6 h-6" src={heart} alt="" />
+                        <img className="w-6 h-6" src={heart} alt="icon" />
                     </div>
 
 

@@ -1,13 +1,13 @@
 
 import './App.css'
-import Home from './pages/Home/home'
+import Story from './pages/Story page/story';
 
 
 
 function App() {
   return (
     <>
-    <Home/>
+    <Story/>
     </>
   );
 }
