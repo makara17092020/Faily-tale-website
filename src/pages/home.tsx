@@ -1,10 +1,10 @@
 <<<<<<< HEAD
 
-import Card from "../../components/card"
-import Navbar from "../../components/header"
+import Card from "../components/card"
+import Navbar from "../components/header"
 import hero from "../../assets/herosectionhomepage.png"
-import Button from "../../components/button"
-import Footer from "../../components/footer"
+import Button from "../components/button"
+import Footer from "../components/footer"
 
 const Home = () => {
     return (
@@ -89,6 +89,7 @@ const Home = () => {
 // import HeroSection from "./components/Herosection"
 import Card from "../../components/card";
 
+<<<<<<< HEAD:src/pages/Home/home.tsx
 const Home = () => {
   return (
     <main>
@@ -110,4 +111,6 @@ const Home = () => {
 };
 >>>>>>> button
 
+=======
+>>>>>>> makara:src/pages/home.tsx
 export default Home;

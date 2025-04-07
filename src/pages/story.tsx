@@ -1,8 +1,8 @@
-import Footer from "../../components/footer"
-import Navbar from "../../components/header"
+import Footer from "../components/footer"
+import Navbar from "../components/header"
 import Herostory from "../../assets/Herostory.png"
-import Button from "../../components/button"
-import Card from "../../components/card"
+import Button from "../components/button"
+import Card from "../components/card"
 
 const Story = () => {
     return (
@@ -65,9 +65,9 @@ const Story = () => {
         </div>
 
         <div className="flex justify-center space-x-4 p-4">
-            <a href="page1.html" className="px-4 py-2 bg-[#FFD700] text-white rounded-xl hover:bg-[#FFD700]  transition">1</a>
-            <a href="page2.html" className="px-4 py-2 bg-[#983FFD] text-white rounded-xl hover:bg-[#FFD700]  transition">2</a>
-            <a href="page3.html" className="px-4 py-2 bg-[#983FFD] text-white rounded-xl hover:bg-[#FFD700]  transition">3</a>
+            <a href="" className="px-4 py-2 bg-[#FFD700] text-white rounded-xl hover:bg-[#FFD700]  transition">1</a>
+            <a href="" className="px-4 py-2 bg-[#983FFD] text-white rounded-xl hover:bg-[#FFD700]  transition">2</a>
+            <a href="" className="px-4 py-2 bg-[#983FFD] text-white rounded-xl hover:bg-[#FFD700]  transition">3</a>
         </div>
 
 
