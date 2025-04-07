@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 import Card from "../components/card"
 import Navbar from "../components/header"
@@ -85,32 +85,7 @@ const Home = () => {
         </main>
     )
 }
-=======
-// import HeroSection from "./components/Herosection"
-import Card from "../../components/card";
 
-<<<<<<< HEAD:src/pages/Home/home.tsx
-const Home = () => {
-  return (
-    <main>
-      <>
-        {/* <HeroSection /> */}
-        <h1 className="lg:px-10 md:px-15 sm:px-10 px-20 py-5 font-bold text-5xl text-[#983FFD]">
-          Adventure
-        </h1>
 
-        <div className="flex justify-center flex-wrap gap-5">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
-      </>
-    </main>
-  );
-};
->>>>>>> button
 
-=======
->>>>>>> makara:src/pages/home.tsx
 export default Home;
