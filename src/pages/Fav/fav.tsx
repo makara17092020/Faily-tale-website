@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import favorite from "../../assets/favorite.png";
 import pig from "../../assets/box.png";
 import box1 from "../../assets/box1.png";
@@ -62,7 +62,7 @@ const stories = [
 
 export default function FavoriteStories() {
   const [loved, setLoved] = useState(Array(stories.length).fill(false));
-  const toggleLove = (index) => {
+  const toggleLove = (index: number) => {
     setLoved((prev) => {
       const newLoved = [...prev];
       newLoved[index] = !newLoved[index];

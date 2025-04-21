@@ -1,18 +1,17 @@
-<<<<<<< HEAD
-import './App.css'
-// import Layout from './components/layout'  
-import Home from './pages/Home/home'
-=======
+import "./App.css";
+// import Layout from './components/layout'
+
 import "./App.css";
 import Home from "./pages/Home/home";
+import FavoriteStories from "./pages/Fav/fav";
 
 function App() {
   return (
     <>
-      <Navbar />
       <main>
         <Home />
       </main>
+      <FavoriteStories />
     </>
   );
 }
