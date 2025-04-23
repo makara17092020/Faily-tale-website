@@ -5,7 +5,7 @@ const Card = () => {
     return (
         <section>
             <a href="" className=''>
-            <div className="w-[18rem] h-[36rem] rounded-[1.5rem] shadow-2xl mb-5">
+            <div className="w-[18rem] h-[38rem] rounded-[1.5rem] shadow-2xl mb-5">
                 <div className='relative w-full h-[75%]'>
                     <img className='w-full h-full rounded-tl-2xl rounded-tr-2xl' src={bookCover1} alt="" />
                     <div className="absolute top-4 right-3 w-8 h-7.5 flex items-center justify-center rounded-full bg-transparent hover:bg-[#F40808] transition-colors duration-200">
