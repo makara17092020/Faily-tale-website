@@ -4,9 +4,6 @@ import Footer from "./components/footer"
 import AppRoute from "./Routes"
 
 
-
-
-
 function App() {
   return (
     <>

@@ -1,6 +1,10 @@
 import { useState } from "react";
+<<<<<<< HEAD:src/pages/fav.tsx
 import favorite from "../../assets/favorite.png";
 import pig from "../../assets/box.png";
+=======
+import pig from "../../assets/pig.png";
+>>>>>>> button1:src/pages/Fav/fav.tsx
 import box1 from "../../assets/box1.png";
 import box2 from "../../assets/box2.png";
 import box3 from "../../assets/box3.png";
@@ -8,6 +12,7 @@ import box4 from "../../assets/box4.png";
 import box5 from "../../assets/box5.png";
 import box6 from "../../assets/box6.png";
 import box7 from "../../assets/box7.png";
+import img from "../../assets/img.png";
 
 const stories = [
   {
@@ -62,7 +67,7 @@ const stories = [
 
 export default function FavoriteStories() {
   const [loved, setLoved] = useState(Array(stories.length).fill(false));
-  const toggleLove = (index) => {
+  const toggleLove = (index: number) => {
     setLoved((prev) => {
       const newLoved = [...prev];
       newLoved[index] = !newLoved[index];
@@ -75,7 +80,7 @@ export default function FavoriteStories() {
       {/* Banner */}
       <div className="relative w-full h-100 bg-cover bg-center">
         <img
-          src={favorite}
+          src={img}
           alt="Favorite Stories"
           className="w-full h-full object-cover"
         />
