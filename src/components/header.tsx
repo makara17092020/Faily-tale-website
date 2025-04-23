@@ -1,20 +1,21 @@
 import { useState } from "react";
 import logo from "../assets/Logonavbar.png";
+import {Link} from "react-router"
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <nav className="px-10 pt-2 flex justify-between md:justify-between items-center relative shadow pb-1 bg-white-800 text-black">
       <div className="hidden font-bold md:flex space-x-6">
-        <a className="hover:text-bluegreen hover:underline" href="/">
+        <Link to="/" className="hover:text-bluegreen hover:underline">
           Home
-        </a>
-        <a className="hover:text-bluegreen hover:underline" href="/Story">
+        </Link>
+        <Link to="/story" className="hover:text-bluegreen hover:underline" >
           Story
-        </a>
-        <a className="hover:text-bluegreen hover:underline" href="/Favorite">
+        </Link>
+        <Link to="#" className="hover:text-bluegreen hover:underline">
           Favorite
-        </a>
+        </Link>
       </div>
 
       <button

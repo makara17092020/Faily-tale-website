@@ -1,13 +1,11 @@
-import Footer from "../components/footer"
-import Navbar from "../components/header"
-import Herostory from "../../assets/Herostory.png"
+
 import Button from "../components/button"
 import Card from "../components/card"
+import Herostory from "../assets/Herostory.png"
 
 const Story = () => {
     return (
         <>
-        <Navbar/>
 
         <div className=" w-full h-auto flex items-center justify-center ">
             <div className="w-full h-[500px]">
@@ -72,7 +70,6 @@ const Story = () => {
 
 
 
-        <Footer/>
 
         </>
     )
