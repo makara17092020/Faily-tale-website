@@ -1,16 +1,16 @@
+import "./App.css";
+import Footer from "./components/footer";
+import Navbar from "./components/header";
+import Detail from "./pages/Detail/detail";
 
-import './App.css'
-import Layout from './components/layout';
-// import Layout from './components/layout'  
-
-
+// import Layout from './components/layout'
 
 function App() {
   return (
     <>
-      <main>
-        < Layout />
-      </main>
+      <Navbar />
+      <Detail />
+      <Footer />
     </>
   );
 }
