@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
         <Link to="/story" className="hover:text-bluegreen hover:underline" >
           Story
         </Link>
-        <Link to="#" className="hover:text-bluegreen hover:underline">
+        <Link to="/fav" className="hover:text-bluegreen hover:underline">
           Favorite
         </Link>
       </div>

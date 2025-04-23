@@ -1,18 +1,13 @@
 import { useState } from "react";
-<<<<<<< HEAD:src/pages/fav.tsx
-import favorite from "../../assets/favorite.png";
-import pig from "../../assets/box.png";
-=======
-import pig from "../../assets/pig.png";
->>>>>>> button1:src/pages/Fav/fav.tsx
-import box1 from "../../assets/box1.png";
-import box2 from "../../assets/box2.png";
-import box3 from "../../assets/box3.png";
-import box4 from "../../assets/box4.png";
-import box5 from "../../assets/box5.png";
-import box6 from "../../assets/box6.png";
-import box7 from "../../assets/box7.png";
-import img from "../../assets/img.png";
+import pig from "../assets/pig.png";
+import box1 from "../assets/box1.png";
+import box2 from "../assets/box2.png";
+import box3 from "../assets/box3.png";
+import box4 from "../assets/box4.png";
+import box5 from "../assets/box5.png";
+import box6 from "../assets/box6.png";
+import box7 from "../assets/box7.png";
+import img from "../assets/img.png";
 
 const stories = [
   {
