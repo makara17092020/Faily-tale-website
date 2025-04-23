@@ -5,16 +5,20 @@ import Story from "./pages/story"
 import Favorite from "./pages/fav"
 import Register from "./pages/register"
 import Login from "./pages/login"
+import Detail from "./pages/detail"
 
 
 const AppRoute: React.FC = () => {
     return (
         <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/Story" element={<Story />} />
         <Route path="/fav" element={<Favorite/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<Login/>} />
+        <Route path="/detail" element={<Detail />} />
+
         
       </Routes>
     )
