@@ -1,14 +1,8 @@
 
-import "./App.css";
-<<<<<<< HEAD
-import Story from './pages/story';
-import Home from './pages/home'
-=======
 import Header from "./components/header"
 import Footer from "./components/footer"
 import AppRoute from "./Routes"
 
->>>>>>> makara
 
 
 
@@ -18,8 +12,7 @@ function App() {
     <>
      <Header/>
       <main>
-
-<AppRoute/>
+        <AppRoute/>
       </main>
       <Footer/>
     </>
