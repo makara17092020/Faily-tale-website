@@ -1,18 +1,16 @@
-
-
-import Header from "./components/header"
-import Footer from "./components/footer"
-import AppRoute from "./Routes"
-
+import Header from "./components/header";
+import Footer from "./components/footer";
+import AppRoute from "./Routes";
 
 function App() {
   return (
     <>
-     <Header/>
+      <Header />
+
       <main>
-        <AppRoute/>
+        <AppRoute />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
