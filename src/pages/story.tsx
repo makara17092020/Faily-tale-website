@@ -3,6 +3,7 @@ import Button from "../components/button"
 import Card from "../components/card"
 import Herostory from "../assets/Herostory.png"
 
+
 const Story = () => {
     return (
         <>
