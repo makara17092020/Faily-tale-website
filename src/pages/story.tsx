@@ -7,6 +7,8 @@ const Story = () => {
   const [categories, setCategories] = useState<any[]>([]);
   const [ageGroups, setAgeGroups] = useState<any[]>([]);
   const [filters, setFilters] = useState<any>({ category: [], ageGroup: [] });
+  const [searchTerm, setSearchTerm] = useState<string>(""); // New: For input search
+  const [stories, setStories] = useState<any[]>([]); // New: To store fetched stories
 
   // Fetch story types and age ranges from the API
   useEffect(() => {
@@ -29,6 +31,23 @@ const Story = () => {
 
     fetchData();
   }, []);
+
+  // Fetch stories based on searchTerm
+  useEffect(() => {
+    const fetchStories = async () => {
+      try {
+        const res = await fetch(
+          `http://62.72.46.248:1337/api/stories?filters[title][$containsi]=${searchTerm}`
+        );
+        const data = await res.json();
+        setStories(data.data || []); // Fallback to empty if no data
+      } catch (error: any) {
+        console.error("Error fetching stories:", error);
+      }
+    };
+
+    fetchStories();
+  }, [searchTerm]); // Runs when searchTerm changes
 
   const toggleFilter = (type: any, value: any) => {
     setFilters((prev: any) => {
@@ -58,6 +77,8 @@ const Story = () => {
           type="text"
           placeholder="Search..."
           className="w-[30rem] h-[4rem] px-6 text-lg border-2 border-[#983FFD] rounded-full shadow-md focus:outline-none"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)} // New: update searchTerm
         />
       </div>
 
@@ -92,40 +113,16 @@ const Story = () => {
       </h1>
 
       <div className="flex justify-center flex-wrap gap-5">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {stories.length > 0 ? (
+          stories.map((story: any) => (
+            <Card key={story.id} story={story} />
+          ))
+        ) : (
+          <p className="text-lg text-gray-500">No stories found</p>
+        )}
       </div>
 
-      <div className="flex justify-center space-x-4 p-4">
-        <a
-          href="#"
-          className="px-4 py-2 bg-[#FFD700] text-white rounded-xl hover:bg-[#FFD700] transition"
-        >
-          1
-        </a>
-        <a
-          href="#"
-          className="px-4 py-2 bg-[#983FFD] text-white rounded-xl hover:bg-[#FFD700] transition"
-        >
-          2
-        </a>
-        <a
-          href="#"
-          className="px-4 py-2 bg-[#983FFD] text-white rounded-xl hover:bg-[#FFD700] transition"
-        >
-          3
-        </a>
-      </div>
+    
     </>
   );
 };
