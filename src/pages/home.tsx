@@ -34,7 +34,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className=''>
+            <div className='mb-10'>
                 <h1 className='lg:text-7xl text-4xl font-bold text-center text-black py-10'>MAKE NEW FRIENDS.</h1>
                 <p className='text-black lg:text-2xl text-xl text-center'>You’ll meet new friends in Sooper Books, like Monty and The Ogglebogs, who jump out of the stories and into your lives.</p>
                 <div className='mt-5 w-full lg:h-[38rem] h-[20rem]'>
