@@ -114,15 +114,11 @@ const Story = () => {
 
       <div className="flex justify-center flex-wrap gap-5">
         {stories.length > 0 ? (
-          stories.map((story: any) => (
-            <Card key={story.id} story={story} />
-          ))
+          stories.map((story: any) => <Card key={story.id} story={story} />)
         ) : (
           <p className="text-lg text-gray-500">No stories found</p>
         )}
       </div>
-
-    
     </>
   );
 };
