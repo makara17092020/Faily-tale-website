@@ -63,13 +63,7 @@ const Story = () => {
             <Card/>
         </div>
 
-        <div className="flex justify-center space-x-4 p-4">
-            <a href="" className="px-4 py-2 bg-[#FFD700] text-white rounded-xl hover:bg-[#FFD700]  transition">1</a>
-            <a href="" className="px-4 py-2 bg-[#983FFD] text-white rounded-xl hover:bg-[#FFD700]  transition">2</a>
-            <a href="" className="px-4 py-2 bg-[#983FFD] text-white rounded-xl hover:bg-[#FFD700]  transition">3</a>
-        </div>
-
-
+        
 
 
         </>
