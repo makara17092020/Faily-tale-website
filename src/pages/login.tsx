@@ -1,44 +1,62 @@
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import { User, Lock } from "lucide-react";
-
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
-    username: "",
-    email: "",
+    identifier: "", // This can be either username or email for Strapi
     password: "",
-    repeatPassword: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (formData.password !== formData.repeatPassword) {
-      alert("Passwords do not match");
-      return;
+
+    try {
+      const response = await fetch("http://62.72.46.248:1337/api/auth/local", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data?.error?.message || "Login failed");
+      }
+
+      console.log("Login successful", data);
+      alert("Login successful!");
+      // You can store token: data.jwt or user: data.user
+    } catch (error) {
+      if (error instanceof Error) {
+        alert(`Login failed: ${error.message}`);
+      } else {
+        alert("Login failed: Unknown error");
+      }
     }
-    console.log("Form Submitted", formData);
   };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4">
       <div className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-md sm:max-w-lg md:max-w-xl">
         <h1 className="text-2xl sm:text-3xl text-[#50C878] font-bold text-center mb-4">
-          Log In 
+          Log In
         </h1>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Username */}
+          {/* Identifier */}
           <div className="flex items-center gap-2 justify-center">
             <User className="text-[#50C878]" />
             <div className="border border-[#FFD700] p-2 rounded-lg w-full">
               <input
                 type="text"
-                name="username"
-                placeholder="Username"
+                name="identifier"
+                placeholder="Email or Username"
                 required
-                value={formData.username}
+                value={formData.identifier}
                 onChange={handleChange}
                 className="w-full outline-none p-1 font-medium text-[#50C878]"
               />
@@ -47,7 +65,9 @@ const RegisterForm = () => {
 
           {/* Forgot Password */}
           <div className="text-sm text-right sm:text-right">
-            <a href="#" className="font-medium  text-[#50C878]">Forgot Password?</a>
+            <a href="#" className="font-medium text-[#50C878]">
+              Forgot Password?
+            </a>
           </div>
 
           {/* Password */}
@@ -75,13 +95,21 @@ const RegisterForm = () => {
           </button>
 
           <div className="text-center mt-4">
-            <a href="#" className="block text-sm font-medium text-[#FFD700]">You have on Account</a>
-            <a href="#" className="block text-sm font-medium text-[#50C878]">Register</a>
+            <a href="#" className="block text-sm font-medium text-[#FFD700]">
+              You have on Account
+            </a>
+            <a href="#" className="block text-sm font-medium text-[#50C878]">
+              Register
+            </a>
           </div>
 
           <div className="text-center mt-4">
-            <a href="#" className="block text-sm font-medium text-[#FFD700]">Forget Password</a>
-            <a href="#" className="block text-sm font-medium text-[#50C878]">Reset Password</a>
+            <a href="#" className="block text-sm font-medium text-[#FFD700]">
+              Forget Password
+            </a>
+            <a href="#" className="block text-sm font-medium text-[#50C878]">
+              Reset Password
+            </a>
           </div>
         </form>
       </div>

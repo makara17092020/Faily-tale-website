@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { User, Mail, Lock } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
-const RegisterForm = () => {
+const Register: React.FC = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
     repeatPassword: "",
   });
+
+  const navigate = useNavigate(); // Initialize navigate
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,36 +24,41 @@ const RegisterForm = () => {
     }
 
     try {
-      const response = await fetch('http://62.72.46.248:1337/api/auth/local/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: formData.username,
-          email: formData.email,
-          password: formData.password,
-        }),
-      });
+      const response = await fetch(
+        "http://62.72.46.248:1337/api/auth/local/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: formData.username,
+            email: formData.email,
+            password: formData.password,
+          }),
+        }
+      );
 
       const data = await response.json();
 
       if (response.ok) {
-        console.log('User registered successfully:', data);
-        alert('Registration successful!');
+        console.log("User registered successfully:", data);
+        alert("Registration successful!");
         setFormData({
           username: "",
           email: "",
           password: "",
           repeatPassword: "",
         });
+        // Navigate to the login page after successful registration
+        navigate("/login");
       } else {
-        console.error('Registration failed:', data);
+        console.error("Registration failed:", data);
         alert(data.error?.message || "Registration failed!");
       }
     } catch (error) {
-      console.error('Error during registration:', error);
-      alert('An error occurred. Please try again later.');
+      console.error("Error during registration:", error);
+      alert("An error occurred. Please try again later.");
     }
   };
 
@@ -155,4 +163,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default Register;
