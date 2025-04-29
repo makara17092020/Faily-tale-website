@@ -2,7 +2,6 @@ import { Link } from "react-router";
 import bookCover1 from "../assets/adventure 1.png";
 import heart from "../assets/heart-icon.png";
 
-// Define the props type
 type CardProps = {
   story: any;
 };

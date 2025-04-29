@@ -9,24 +9,56 @@ const RegisterForm = () => {
     repeatPassword: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (formData.password !== formData.repeatPassword) {
       alert("Passwords do not match");
       return;
     }
-    console.log("Form Submitted", formData);
+
+    try {
+      const response = await fetch('http://62.72.46.248:1337/api/auth/local/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: formData.username,
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log('User registered successfully:', data);
+        alert('Registration successful!');
+        setFormData({
+          username: "",
+          email: "",
+          password: "",
+          repeatPassword: "",
+        });
+      } else {
+        console.error('Registration failed:', data);
+        alert(data.error?.message || "Registration failed!");
+      }
+    } catch (error) {
+      console.error('Error during registration:', error);
+      alert('An error occurred. Please try again later.');
+    }
   };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white p-6 rounded-2xl shadow-lg w-200 -mt-30">
         <h1 className="text-3xl text-[#50C878] font-bold text-center mb-4">
-          Register 
+          Register
         </h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Username */}
@@ -78,8 +110,10 @@ const RegisterForm = () => {
           </div>
 
           {/* Forgot Password */}
-          <div className="ml-80 text-sm  sm:text-center">
-            <a href="#" className="font-medium text-[#50C878]">Forgot Password?</a>
+          <div className="ml-80 text-sm sm:text-center">
+            <a href="#" className="font-medium text-[#50C878]">
+              Forgot Password?
+            </a>
           </div>
 
           {/* Repeat Password */}
@@ -105,9 +139,15 @@ const RegisterForm = () => {
           >
             Register
           </button>
-          <div className="text-center mt-4 ">
-            <a href="#" className="block text-sm font-medium text-[#FFD700] ">Already have an Account?</a>
-            <a href="#" className="block text-sm font-medium text-[#50C878]">Log In</a>
+
+          {/* Already have an Account */}
+          <div className="text-center mt-4">
+            <a href="#" className="block text-sm font-medium text-[#FFD700]">
+              Already have an Account?
+            </a>
+            <a href="#" className="block text-sm font-medium text-[#50C878]">
+              Log In
+            </a>
           </div>
         </form>
       </div>
