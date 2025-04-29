@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import pig from "../assets/pig.png";
 import box1 from "../assets/box1.png";
 import box2 from "../assets/box2.png";
@@ -62,6 +62,20 @@ const stories = [
 
 export default function FavoriteStories() {
   const [loved, setLoved] = useState(Array(stories.length).fill(false));
+
+  useEffect(() => {
+    // Fetch data from favorites API
+    fetch("http://62.72.46.248:1337/api/favorites")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Fetched favorites:", data);
+        // Optionally set state with API data here
+      })
+      .catch((error) => {
+        console.error("Error fetching favorites:", error);
+      });
+  }, []);
+
   const toggleLove = (index: number) => {
     setLoved((prev) => {
       const newLoved = [...prev];
@@ -99,7 +113,6 @@ export default function FavoriteStories() {
             />
             <div className="p-4">
               <h3 className="text-lg font-semibold">{story.title}</h3>
-              {/* Text inside the box */}
               <p className="text-sm text-gray-600 mt-2">{story.description}</p>
               <button
                 onClick={() => toggleLove(index)}
