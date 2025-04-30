@@ -37,17 +37,18 @@ const FetchStories: React.FC = () => {
 
   return (
     <div>
-      <h1>Stories</h1>
-      <ul>
+      <h1 className="text-center text-3xl font-semibold mt-3">Stories</h1>
+      <div className="grid grid-cols-4 gap-5 w-[95%] mx-auto mt-5">
         {stories.map((story) => (
-          <li key={story.id}>
-            <h2>{story.title}</h2>
+          <div key={story.id}>
             <img src={story.cover_image.url} alt={story.title} />
-          </li>
+            <h2 className="text-center font-2xl mt-2 font-semibold">{story.title}</h2>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
+
 
 export default FetchStories;
