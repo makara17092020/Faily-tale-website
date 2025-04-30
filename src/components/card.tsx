@@ -1,40 +1,79 @@
-import { Link } from "react-router";
-import bookCover1 from "../assets/adventure 1.png";
-import heart from "../assets/heart-icon.png";
+import React from "react";
+import { Link } from "react-router-dom";
 
-type CardProps = {
-  story: any;
-};
+interface CardProps {
+  id: number;
+  title: string;
+  description: string;
+  url: string;
+  alt?: string;
+  link?: string;
+  onFavoriteClick?: (id: number) => void;
+}
 
-const Card = ({ story }: CardProps) => {
-  return (
-    <section>
-      <Link to="/detail" className="">
-        <div className="w-[18rem] h-[38rem] rounded-[1.5rem] shadow-2xl mb-5">
-          <div className="relative w-full h-[75%]">
-            {/* Use story data instead of hardcoded one */}
-            <img
-              className="w-full h-full rounded-tl-2xl rounded-tr-2xl"
-              src={story.attributes?.coverImage?.url || bookCover1} // fallback if no image
-              alt={story.attributes?.title || "Book Cover"}
-            />
-            <div className="absolute top-4 right-3 w-8 h-7.5 flex items-center justify-center rounded-full bg-transparent hover:bg-[#F40808] transition-colors duration-200">
-              <img className="w-6 h-6" src={heart} alt="icon" />
-            </div>
+const CardComponent: React.FC<CardProps> = ({
+  id,
+  title,
+  description,
+  url,
+  alt,
+  link = "/StoryDetail",  // Default value for link
+  onFavoriteClick,
+}) => (
+  <Link to={`${link}`} className="max-w-[260px] bg-white rounded-lg shadow-lg transition-transform transform hover:scale-101 gap-4 block">
+    <div className="relative">
+      <img
+        src={url}
+        alt={alt}
+        className="w-full hover:border-blue-500 h-[210px] object-cover rounded-t-lg"
+      />
+    </div>
+    <div className="p-4">
+      <div className="flex items-center justify-between mb-2">
+        <h2 className="text-lg font-semibold text-pink-500">{title}</h2>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            onFavoriteClick?.(id);
+          }}
+          className="p-1 bg-gradient-to-r from-white to-pink-600 rounded-full shadow-lg hover:scale-105"
+        >
+          <div className="px-3 py-2 rounded-full bg-pink-500 hover:bg-pink-600">
+            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
           </div>
+        </button>
+      </div>
+      <p className="text-sm text-gray-600">{description}</p>
+    </div>
+  </Link>
+);
 
-          <div className="w-full h-[25%]">
-            <h3 className="font-bold text-3xl p-3 text-[#FFD700] hover:text-[#983FFD]">
-              {story.attributes?.title || "No Title"}
-            </h3>
-            <p className="text-xl ps-3 text-black">
-              {story.attributes?.description || "No Description"}
-            </p>
-          </div>
-        </div>
-      </Link>
-    </section>
-  );
-};
+interface StoryProps {
+  stories: Array<{
+    id: number;
+    title: string;
+    description: string;
+    cover_image?: { url: string; alt: string };
+  }>;
+  onFavoriteClick?: (id: number) => void;
+}
 
-export default Card;
+const StoryCards: React.FC<StoryProps> = ({ stories, onFavoriteClick }) => (
+  <div className="flex flex-wrap justify-center gap-7 pt-6 pb-6">
+    {stories.map((story) => (
+      <CardComponent
+        key={story.id}
+        id={story.id}
+        title={story.title}
+        description={story.description}
+        url={story.cover_image?.url || "https://res.cloudinary.com/dsfuhhdez/image/upload/v1745376147/three_little_pigs_4740ba3915.webp"}
+        alt={story.cover_image?.alt || "Story Image"}
+        onFavoriteClick={onFavoriteClick}
+      />
+    ))}
+  </div>
+);
+
+export default StoryCards;

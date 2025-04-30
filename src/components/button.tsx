@@ -21,46 +21,4 @@ const Button = ({
 
 export default Button;
 
-// function Button() {
-//   const shoot = () => {
-//     alert("Great Shot!");
-//   };
 
-//   return (
-//     <button
-//       onClick={shoot}
-//       className="bg-[#983FFD] text-white font-bold py-3 px-10 rounded"
-//     >
-//       Problem Solving
-//     </button>
-//   );
-// }
-
-// export default Button;
-
-// function Button({props}) {
-//   const shoot = () => {
-//     alert("Great Shot!");
-//   };
-
-//   return (
-//     if (props.selected === true) {
-//         <button
-//           onClick={shoot}
-//           className="bg-[#983FFD] text-white font-bold py-3 px-10 rounded"
-//         >
-//           Problem Solving
-//         </button>
-//     } else {
-//       <button
-//       onClick={shoot}
-//       className="bg-[#ffffff] text-purple font-bold py-3 px-10 rounded"
-//     >
-//       Problem Solving
-//     </button>
-//     }
-
-//   );
-// }
-
-// export default Button;
