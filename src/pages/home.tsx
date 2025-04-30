@@ -28,15 +28,15 @@ const Home = () => {
 
             <div className='bg-[#983FFD]'>
                 <h1 className='lg:text-7xl text-4xl font-bold text-center text-white py-10'>MADE WITH LOVE.</h1>
-                <p className='text-white lg:text-2xl text-xl text-center'>harlene, Simon and their team of double Emmy® winning storytellers craft every story from scratch.</p>
+                <p className='text-white lg:text-2xl text-xl text-center'>Every story crafted with care, bringing magic and joy to your heart! 💖📖</p>
                 <div className='flex justify-center'>
                 <img className='' src={people} alt="" />
                 </div>
             </div>
 
             <div className='mb-10'>
-                <h1 className='lg:text-7xl text-4xl font-bold text-center text-black py-10'>MAKE NEW FRIENDS.</h1>
-                <p className='text-black lg:text-2xl text-xl text-center'>You’ll meet new friends in Sooper Books, like Monty and The Ogglebogs, who jump out of the stories and into your lives.</p>
+                <h1 className='lg:text-7xl text-4xl font-bold text-center text-black py-10'>ENJOY FAIRY-TALE WITH WMAD</h1>
+                <p className='text-black lg:text-2xl text-xl text-center'>Enjoy magical tales with WMAD, where adventure and friendship leap off the pages! ✨📚</p>
                 <div className='mt-5 w-full lg:h-[38rem] h-[20rem]'>
                     <img className='w-full h-full' src={last} alt="" />
                 </div>
