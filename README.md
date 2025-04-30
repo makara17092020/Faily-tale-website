@@ -37,7 +37,7 @@ An interactive and responsive Agile Sprint Board web application built with Reac
 
 ### 1. Clone the repo
 
-
+https://github.com/makara17092020/Faily-tale-website
 
 ## 📎 Resources
 - [React Documentation](#)
